@@ -15,11 +15,11 @@ public class RecursionArrayFirstIndex {
 			smallArray[i-1]=a[i];
 		}
 		
-		int fi=firstIndex(smallArray,x);	// Induction Hypothesis
-		if(fi==-1){	// Induction Steps
+		int k=firstIndex(smallArray,x);	// Induction Hypothesis
+		if(k==-1){	// Induction Steps
 			return -1;
 		}else{
-			return fi+1;
+			return k+1;
 		}
 	}
 	// Method 2
@@ -40,5 +40,4 @@ public class RecursionArrayFirstIndex {
 			System.out.println(firstIndex(arr,0));
 			System.out.println(firstIndexBetter(arr,3,0));
 		}
-
 	}

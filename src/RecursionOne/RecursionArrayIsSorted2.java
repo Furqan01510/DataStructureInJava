@@ -17,4 +17,4 @@ public class RecursionArrayIsSorted2 {
 		int[] arr = {0,1,2,5,6};
 		System.out.println(arrayIsSorted(arr,0));
 	}
-}
+}  

@@ -5,17 +5,14 @@ public class RecursionArrayLastIndex {
 		if(a.length==0){	// Base Case
 			return -1;
 		}
-		if(a[0]==x){
-			return 0;
-		}
 		int smallArray[]=new int[a.length-1];	// Copying Array
 		for(int i=1;i<a.length;i++){
 			smallArray[i-1]=a[i];
 		}
 		
-		int li=lastIndex(smallArray,x);	// Induction Hypothesis
-		if(li!=-1) {
-			return -1;
+		int k=lastIndex(smallArray,x);	// Induction Hypothesis
+		if(k!=-1) {						// Induction Steps & Conditions
+			return k+1;
 		}else {
 			if(a[0]==x) {
 				return 0;
@@ -29,15 +26,21 @@ public class RecursionArrayLastIndex {
 	        if(si==a.length){	// Base Case
 	            return -1;
 	        }
-	        if(a[si]==x){	// Induction Step
-	            return si;
-	        }
 	        int k=lastIndexBetter(a,x,si+1);	// Induction Hypothesis
-	        return k;
+	        if(k!=-1) {							// Induction Steps & Conditions
+	        	return k;
+	        }else {
+	        	if(a[si]==x) {
+	        		return si;
+	        	}else {
+	        		return -1;
+	        	}
+	        }
 	    }
 	public static void main(String[] args) {
+		int[] arr = {1,5,3,4,5};
 		
-
+		System.out.println(lastIndex(arr,5));
+		System.out.println(lastIndexBetter(arr,5,0));
 	}
-
 }
